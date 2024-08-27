@@ -14,13 +14,25 @@ import { useKeyboardEvents } from "../../hooks/useKeyboardEvents";
 import { useGameState } from "../../hooks/useGameState";
 import { usePlayerMovement } from "../../hooks/usePlayerMovement";
 import { useState } from "react";
-import { MAX_BULLETS, WIN_SCORE } from "../../constants";
+import {
+  MAX_BULLETS,
+  WIN_SCORE,
+  DEFAULT_PLAYER_WIDTH,
+  DEFAULT_PLAYER_HEIGHT,
+  DEFAULT_ENEMY_WIDTH,
+  DEFAULT_ENEMY_HEIGHT,
+  defaultWalls,
+} from "../../constants";
 import { Controls } from "../Controls";
 import useLineToMouse from "../../hooks/useLineToMouse";
 import { TrailToTarget } from "../TrailToTarget";
+import { WallProps } from "../Wall/index";
+import Wall from "../Wall";
 
 const Game = () => {
   const initialPosition = { x: 9, y: 9 };
+  const walls: WallProps[] = defaultWalls;
+
   const {
     position,
     playerPositionRef,
@@ -29,7 +41,12 @@ const Game = () => {
     moveDown,
     moveUp,
     setPosition,
-  } = usePlayerMovement(initialPosition);
+  } = usePlayerMovement(
+    initialPosition,
+    DEFAULT_PLAYER_WIDTH,
+    DEFAULT_PLAYER_HEIGHT,
+    walls
+  );
   const [isGameOver, setIsGameOver] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [bullets, setBullets] = useState(MAX_BULLETS);
@@ -41,7 +58,10 @@ const Game = () => {
   const { enemies, setEnemies } = useEnemies(
     isGameOver,
     isPaused,
-    playerPositionRef
+    playerPositionRef,
+    walls,
+    DEFAULT_ENEMY_WIDTH,
+    DEFAULT_ENEMY_HEIGHT
   );
   const { playerHealth, setPlayerHealth, setLastDamageTime } = usePlayerHealth({
     isGameOver,
@@ -148,6 +168,11 @@ const Game = () => {
         {FEATURES.ALLOW_POWERUPS &&
           medikits.map((medikit, index) => (
             <PowerUp key={index} powerupPosition={medikit} />
+          ))}
+
+        {FEATURES.ALLOW_WALLS &&
+          walls.map((wall, index) => (
+            <Wall key={index} wallCoordinates={wall.wallCoordinates} />
           ))}
       </Area>
       <Hud playerHealth={playerHealth} bullets={bullets} />

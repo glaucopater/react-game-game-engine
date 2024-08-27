@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { DEFAULT_ENEMY_DAMAGE, PLAYER_MAX_HEALTH } from "../constants";
 import FEATURES from "../features";
 import { playSound } from "../helpers";
+import { Position } from "../custom-types";
 
 type UsePlayerHealthProps = {
   isGameOver: boolean;
   setIsGameOver: React.Dispatch<React.SetStateAction<boolean>>;
   isPaused: boolean;
-  position: { x: number; y: number };
-  enemies: { x: number; y: number }[];
+  position: Position;
+  enemies: Position[];
   setEnemies: React.Dispatch<
     React.SetStateAction<
       {
@@ -34,8 +35,7 @@ export const usePlayerHealth = ({
       const now = Date.now();
       if (lastDamageTime === null || now - lastDamageTime > 1000) {
         const collision = enemies.some(
-          (enemy: { x: number; y: number }) =>
-            enemy.x === position.x && enemy.y === position.y
+          (enemy: Position) => enemy.x === position.x && enemy.y === position.y
         );
         if (collision) {
           setLastDamageTime(now);

@@ -24,6 +24,8 @@ export const DAMAGE_AREA_SIZE = 5;
 export const DEFAULT_ENEMY_SIZE = 30;
 export const DEFAULT_ENEMY_DAMAGE = 25;
 export const DEFAULT_ENEMY_STRIDE = 7;
+export const DEFAULT_ENEMY_WIDTH = 1;
+export const DEFAULT_ENEMY_HEIGHT = 1;
 
 export const ENEMY_INCREMENT_PER_STAGE = 1;
 export const ENEMY_INITIAL_COUNT = 1;
@@ -31,6 +33,9 @@ export const INITIAL_STAGE = 0;
 
 export const WIN_SCORE = 20;
 export const PLAYER_MAX_HEALTH = 100;
+
+export const DEFAULT_PLAYER_WIDTH = 2;
+export const DEFAULT_PLAYER_HEIGHT = 2;
 
 export const MAX_BULLETS = 20;
 export const MEDIKIT_HEALTH_INCREASE = 5;
@@ -52,3 +57,29 @@ export const audio = {
   shotgun: new Audio(shotgun),
   damage: new Audio(damage),
 };
+
+export const defaultWalls = [
+  {
+    wallCoordinates: [
+      { x: 2, y: 2 },
+      { x: 2, y: 3 },
+      { x: 2, y: 4 },
+      { x: 2, y: 5 },
+    ],
+  },
+  {
+    wallCoordinates: [
+      { x: 17, y: 10 },
+      { x: 18, y: 10 },
+      { x: 19, y: 10 },
+    ],
+  },
+  {
+    wallCoordinates: [
+      { x: 9, y: 16 },
+      { x: 9, y: 17 },
+      { x: 9, y: 18 },
+      { x: 9, y: 19 },
+    ],
+  },
+];

@@ -1,3 +1,5 @@
+import { Position } from "../../custom-types";
+
 export const TrailToTarget = ({
   rect,
   mousePosition,
@@ -8,7 +10,7 @@ export const TrailToTarget = ({
     width: number;
     height: number;
   };
-  mousePosition: { x: number; y: number };
+  mousePosition: Position;
 }) => {
   return (
     <svg

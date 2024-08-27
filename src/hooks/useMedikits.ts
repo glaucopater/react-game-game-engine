@@ -7,11 +7,12 @@ import {
   MIN_BOTTOM_Y,
 } from "../constants";
 import { playSound } from "../helpers";
+import { Position } from "../custom-types";
 
 type UseMedikitsProps = {
   isGameOver: boolean;
   isPaused: boolean;
-  position: { x: number; y: number };
+  position: Position;
   playerHealth: number;
   setPlayerHealth: React.Dispatch<React.SetStateAction<number>>;
 };
@@ -22,7 +23,7 @@ export const useMedikits = ({
   playerHealth,
   setPlayerHealth,
 }: UseMedikitsProps) => {
-  const [medikits, setMedikits] = useState<{ x: number; y: number }[]>([]);
+  const [medikits, setMedikits] = useState<Position[]>([]);
 
   useEffect(() => {
     if (playerHealth <= PLAYER_MAX_HEALTH) {

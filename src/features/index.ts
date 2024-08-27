@@ -11,4 +11,5 @@ export default {
   ALLOW_ENEMIES: true,
   ALLOW_POWERUPS: true,
   ALLOW_PLAYER_IMMORTAL: false,
+  ALLOW_WALLS: true,
 };

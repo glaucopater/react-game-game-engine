@@ -2,31 +2,20 @@ import { useState, useEffect } from "react";
 import { MAX_BULLETS, WIN_SCORE } from "../constants";
 import { PLAYER_MAX_HEALTH } from "../constants";
 import { playSound } from "../helpers";
+import { Position } from "../custom-types";
 
 type UseGameStateProps = {
   isGameOver: boolean;
   setIsGameOver: React.Dispatch<React.SetStateAction<boolean>>;
-  setEnemies: React.Dispatch<
-    React.SetStateAction<
-      {
-        x: number;
-        y: number;
-      }[]
-    >
-  >;
+  setEnemies: React.Dispatch<React.SetStateAction<Position[]>>;
   setPlayerHealth: React.Dispatch<React.SetStateAction<number>>;
-  setPosition: React.Dispatch<
-    React.SetStateAction<{
-      x: number;
-      y: number;
-    }>
-  >;
+  setPosition: React.Dispatch<React.SetStateAction<Position>>;
   setIsPaused: React.Dispatch<React.SetStateAction<boolean>>;
   setLastDamageTime: React.Dispatch<React.SetStateAction<number>>;
   setBullets: React.Dispatch<React.SetStateAction<number>>;
   isPaused: boolean;
   bullets: number;
-  enemies: { x: number; y: number }[];
+  enemies: Position[];
 };
 
 export const useGameState = ({
@@ -73,7 +62,7 @@ export const useGameState = ({
     playSound("shotgun");
     setBullets((prevBullets: number) => prevBullets - 1);
     const clickedEnemyIndex = enemies.findIndex(
-      (enemy: { x: number; y: number }) =>
+      (enemy: Position) =>
         mouseX >= enemy.x * 20 &&
         mouseX < (enemy.x + 1) * 20 &&
         mouseY >= enemy.y * 20 &&

@@ -1,11 +1,13 @@
 import { ENEMY_AVATARS } from "../../constants";
 import "./Enemy.css";
+import { Position } from "../../custom-types";
+
 export const Enemy = ({
   enemy,
   id,
   isPaused,
 }: {
-  enemy: { x: number; y: number };
+  enemy: Position;
   id: string;
   isPaused: boolean;
 }) => {

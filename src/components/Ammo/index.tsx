@@ -1,7 +1,8 @@
 import { AMMO_AVATAR } from "../../constants";
+import { Position } from "../../custom-types";
 
 interface AmmoProps {
-  ammunition: { x: number; y: number };
+  ammunition: Position;
 }
 
 const Ammo = ({ ammunition }: AmmoProps) => {

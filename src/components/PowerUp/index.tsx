@@ -1,7 +1,8 @@
 import { POWERUPS_AVATARS } from "../../constants";
+import { Position } from "../../custom-types";
 
 interface PowerUpProps {
-  powerupPosition: { x: number; y: number };
+  powerupPosition: Position;
 }
 
 const PowerUp = ({ powerupPosition: medikit }: PowerUpProps) => {

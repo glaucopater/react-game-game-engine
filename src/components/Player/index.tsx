@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from "react";
 import { getPlayerAvatar } from "../../helpers";
 import "./Player.css";
+import { Position } from "../../custom-types";
 
 type PlayerProps = {
-  position: { x: number; y: number };
+  position: Position;
   health: number;
   isPaused: boolean;
   setRefPlayerPosition: React.Dispatch<

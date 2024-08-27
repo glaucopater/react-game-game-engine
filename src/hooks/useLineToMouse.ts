@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import { Position } from "../custom-types";
 
 const useLineToMouse = () => {
-  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
+  const [mousePosition, setMousePosition] = useState<Position>({
     x: 0,
     y: 0,
   });

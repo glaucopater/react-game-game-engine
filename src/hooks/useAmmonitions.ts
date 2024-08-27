@@ -7,11 +7,12 @@ import {
   MIN_BOTTOM_Y,
 } from "../constants";
 import { playSound } from "../helpers";
+import { Position } from "../custom-types";
 
 type UseAmmunitionProps = {
   isGameOver: boolean;
   isPaused: boolean;
-  position: { x: number; y: number };
+  position: Position;
   bullets: number;
   setBullets: React.Dispatch<React.SetStateAction<number>>;
 };
@@ -23,9 +24,7 @@ export const useAmmunition = ({
   bullets,
   setBullets,
 }: UseAmmunitionProps) => {
-  const [ammunitions, setAmmunitions] = useState<{ x: number; y: number }[]>(
-    []
-  );
+  const [ammunitions, setAmmunitions] = useState<Position[]>([]);
 
   useEffect(() => {
     if (bullets < MAX_BULLETS) {
