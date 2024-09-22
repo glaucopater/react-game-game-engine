@@ -38,7 +38,7 @@ export const Controls = ({
         style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
       >
         <button style={{ width: "100%" }} onClick={() => pauseGame()}>
-          Pause
+          Pause (spacebar)
         </button>
       </div>
     </div>
