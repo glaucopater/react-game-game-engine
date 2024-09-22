@@ -3389,6 +3389,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-game-engine@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "react-game-engine@workspace:."
+  dependencies:
+    "@testing-library/jest-dom": "npm:^6.4.2"
+    "@testing-library/react": "npm:^15.0.2"
+    "@types/jest": "npm:^29.5.12"
+    "@types/react": "npm:^18.2.79"
+    "@types/react-dom": "npm:^18.2.25"
+    "@typescript-eslint/eslint-plugin": "npm:^7.5.0"
+    "@typescript-eslint/parser": "npm:^7.5.0"
+    "@vitejs/plugin-react": "npm:^4.2.1"
+    eslint: "npm:^8.57.0"
+    eslint-plugin-react-hooks: "npm:^4.6.0"
+    eslint-plugin-react-refresh: "npm:^0.4.6"
+    husky: "npm:^9.0.11"
+    jsdom: "npm:^24.0.0"
+    react: "npm:^18.2.0"
+    react-dom: "npm:^18.2.0"
+    typescript: "npm:^5.2.2"
+    vite: "npm:^5.2.8"
+    vite-plugin-compression: "npm:^0.5.1"
+    vitest: "npm:^1.5.0"
+  languageName: unknown
+  linkType: soft
+
 "react-is@npm:^17.0.1":
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
@@ -4134,32 +4160,6 @@ __metadata:
   checksum: 10c0/87f6666cccd52678a0e1dbf32e7492e4003580a168114221e4c2d404d53097d886a8be4c5c379e347d0e749affa0ea5416e4e3a0356aeca228a77ee54891ca3c
   languageName: node
   linkType: hard
-
-"vitets-react-game@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "vitets-react-game@workspace:."
-  dependencies:
-    "@testing-library/jest-dom": "npm:^6.4.2"
-    "@testing-library/react": "npm:^15.0.2"
-    "@types/jest": "npm:^29.5.12"
-    "@types/react": "npm:^18.2.79"
-    "@types/react-dom": "npm:^18.2.25"
-    "@typescript-eslint/eslint-plugin": "npm:^7.5.0"
-    "@typescript-eslint/parser": "npm:^7.5.0"
-    "@vitejs/plugin-react": "npm:^4.2.1"
-    eslint: "npm:^8.57.0"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-react-refresh: "npm:^0.4.6"
-    husky: "npm:^9.0.11"
-    jsdom: "npm:^24.0.0"
-    react: "npm:^18.2.0"
-    react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.2.2"
-    vite: "npm:^5.2.8"
-    vite-plugin-compression: "npm:^0.5.1"
-    vitest: "npm:^1.5.0"
-  languageName: unknown
-  linkType: soft
 
 "w3c-xmlserializer@npm:^5.0.0":
   version: 5.0.0
