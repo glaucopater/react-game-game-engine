@@ -1,4 +1,4 @@
-# React + TypeScript + Vite = A Shooter Game!
+# React Game Engine
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/43279ffe-701c-4a87-82ec-d1c860db5ccd/deploy-status)](https://app.netlify.com/sites/vitets-react-game/deploys)
 
